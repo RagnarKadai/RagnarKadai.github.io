@@ -169,4 +169,8 @@ footer ul p {
         display: inline-block;
         border-radius: 50%
     }
+    .pilditekst {
+        top: 30%;
+        left: 15%;
+    }
 }
