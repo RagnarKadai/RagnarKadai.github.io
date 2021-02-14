@@ -155,3 +155,6 @@ footer ul p {
     width: 100%;
     margin-bottom: 10px;
 }
+@media only screen and (max-width: 600px) {
+    width: 600px;
+}
