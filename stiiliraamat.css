@@ -25,7 +25,7 @@ header hr {
 header nav ul{
     display: block;
     margin: 0 auto;
-    text-align: space-between;
+    text-align: center;
     width: fit-content;
 }
 header nav ul li {
@@ -122,7 +122,7 @@ header .banner{
 }
 footer {
     background-color: burlywood;
-    width: calc(100%-80px);
+    width: 100%;
     padding: 40px 40px;
     margin-top: 20px;
     overflow: hidden;
