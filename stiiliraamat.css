@@ -159,4 +159,14 @@ footer ul p {
     body {
         width: 600px;
     }
+    .container .kast{
+        position: relative;
+        width: 100px;
+        height: 100px;
+        background-color: grey;
+        box-sizing: border-box;
+        margin: 10px auto;
+        display: inline-block;
+        border-radius: 50%
+    }
 }
