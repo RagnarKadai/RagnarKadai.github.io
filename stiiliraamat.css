@@ -47,7 +47,7 @@ header nav ul li a:hover, header nav ul li a:active {
 header .banner{
     background-image: url("https://thumbs.dreamstime.com/b/cooking-banner-seafood-top-view-free-space-your-text-164725562.jpg");
     width: 100%;
-    height: calc(100vh - 500px);
+    height: calc(100vh - 400px);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
