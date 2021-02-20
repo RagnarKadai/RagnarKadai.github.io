@@ -61,8 +61,25 @@ header .banner{
 }
 .tekst{
     font-family: monospace;
-    font-size: 12px;
+    font-size: 16px;
     letter-spacing: 1px;
+    width: 50%;
+}
+.sisu{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}
+.pilt {
+    background-image: url(https://g.nh.ee/images/pix/1600x914/oTB1LkFiAlE/b46755bc9c5573a6ff-84046084.jpg?f=0.5_0&up=1);
+    width: 40%;
+    height: auto;
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 .retsept{
     font-family: sans-serif;
@@ -159,18 +176,32 @@ footer ul p {
     body {
         width: 600px;
     }
+    .container {
+        width: 90%;
+        margin: 40px auto;
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
     .container .kast{
         position: relative;
-        width: 100px;
-        height: 100px;
+        width: 200px;
+        height: 200px;
         background-color: grey;
         box-sizing: border-box;
         margin: 10px auto;
         display: inline-block;
         border-radius: 50%
     }
-    .pilditekst {
-        top: 10%;
-        left: 5%;
+    .pilt {
+        width: 0px;
+    }
+    .tekst {
+        width: 100%;
+    }
+    .sisu {
+        height: auto;
     }
 }
