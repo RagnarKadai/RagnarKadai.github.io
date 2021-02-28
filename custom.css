@@ -1,0 +1,64 @@
+.lnr {
+    display: inline-block;
+    fill: currentColor;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.05em;
+    stroke-width: 2;
+}
+
+.lnr-cart {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.lnr-magnifier {
+    color: #000000;   
+}
+
+.navbar-nav li {
+    margin-right: 3em;
+}
+
+section {
+    margin-top: 40px;
+}
+
+.h {
+    text-align: center;
+}
+
+.card-body {
+    align-content: center;
+}
+
+footer {
+    margin-top: 60px;
+    padding: 5em;
+}
+.seepbtn {
+    width: 200px;
+    border-radius: 50%;
+}
+.jumbobtn {
+    display: flex;
+    justify-content: space-around;
+}
+.jumbotron {
+    background-color: #f8f9fa;
+    text-align: center;
+}
+.carousel-inner img {
+    display: block;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    height: 50px;
+    width: 50px;
+    color: black;
+    background-color: black;
+    border-radius: 50%;
+    border: 1px solid black;
+}
