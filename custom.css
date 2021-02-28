@@ -62,3 +62,24 @@ footer {
     border-radius: 50%;
     border: 1px solid black;
 }
+.carousel-item h3, .carousel-item p {
+        background: rgba(211, 211, 211, .5)
+    }
+.meiepilt {
+    width: 1100px;
+    height: 500px;
+}
+@media only screen and (max-width: 600px) {
+    .seepbtn {
+        width: 100px;
+    
+    }
+    .meiepilt {
+        width: 400px;
+        height: 200px;
+    }
+    .carousel-control-prev-icon, .carousel-control-next-icon {
+    height: 20px;
+    width: 20px;
+    }
+}
