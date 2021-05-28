@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!-- saved from url=(0027)https://portal.huntloc.com/ -->
+<html lang="en" ng-app="myApp" class="no-js ng-scope"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">.ng-animate.item:not(.left):not(.right){-webkit-transition:0s ease-in-out left;transition:0s ease-in-out left}</style><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style>
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Huntloc Portal</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="index_files/vendor.css">
+  <link rel="stylesheet" href="index_files/app.css">
+  <link rel="shortcut icon" href="https://portal.huntloc.com/images/favicon.png">
+
+  <link rel="alternate" type="application/rss+xml" title="Huntloc » Feed" href="http://www.huntloc.com/en/feed/">
+  <link rel="alternate" type="application/rss+xml" title="Huntloc » Comments Feed" href="http://www.huntloc.com/en/comments/feed/">
+  <link rel="alternate" type="application/rss+xml" title="Huntloc » Home Comments Feed" href="http://www.huntloc.com/en/avaleht/feed/">
+<script async="" src="./index_files/analytics.js.Allalaaditud fail"></script><script type="text/javascript" charset="UTF-8" src="./index_files/common.js.Allalaaditud fail"></script><script type="text/javascript" charset="UTF-8" src="./index_files/util.js.Allalaaditud fail"></script><style>.vs-repeat-wheel-helper{position: absolute;top: 0;bottom: 0;left: 0;right: 0;z-index: 99999;background: rgba(0, 0, 0, 0);}.vs-repeat-repeated-element{position: absolute;z-index: 1;}</style><script type="text/javascript">// Promises 
+var _eid_promises = {}; 
+// Turn the incoming message from extension 
+// into pending Promise resolving 
+window.addEventListener("message", function(event) { 
+    if(event.source !== window) return; 
+    if(event.data.src && (event.data.src === "background.js")) { 
+        console.log("Page received: "); 
+        console.log(event.data); 
+        // Get the promise 
+        if(event.data.nonce) { 
+            var p = _eid_promises[event.data.nonce]; 
+            // resolve 
+            if(event.data.result === "ok") { 
+                if(event.data.signature !== undefined) { 
+                    p.resolve({hex: event.data.signature}); 
+                } else if(event.data.version !== undefined) { 
+                    p.resolve(event.data.extension + "/" + event.data.version); 
+                } else if(event.data.cert !== undefined) { 
+                    p.resolve({hex: event.data.cert}); 
+                } else { 
+                    console.log("No idea how to handle message"); 
+                    console.log(event.data); 
+                } 
+            } else { 
+                // reject 
+                p.reject(new Error(event.data.result)); 
+            } 
+            delete _eid_promises[event.data.nonce]; 
+        } else { 
+            console.log("No nonce in event msg"); 
+        } 
+    } 
+}, false); 
+ 
+ 
+function TokenSigning() { 
+    function nonce() { 
+        var val = ""; 
+        var hex = "abcdefghijklmnopqrstuvwxyz0123456789"; 
+        for(var i = 0; i < 16; i++) val += hex.charAt(Math.floor(Math.random() * hex.length)); 
+        return val; 
+    } 
+ 
+    function messagePromise(msg) { 
+        return new Promise(function(resolve, reject) { 
+            // amend with necessary metadata 
+            msg["nonce"] = nonce(); 
+            msg["src"] = "page.js"; 
+            // send message 
+            window.postMessage(msg, "*"); 
+            // and store promise callbacks 
+            _eid_promises[msg.nonce] = { 
+                resolve: resolve, 
+                reject: reject 
+            }; 
+        }); 
+    } 
+    this.getCertificate = function(options) { 
+        var msg = {type: "CERT", lang: options.lang, filter: options.filter}; 
+        console.log("getCertificate()"); 
+        return messagePromise(msg); 
+    }; 
+    this.sign = function(cert, hash, options) { 
+        var msg = {type: "SIGN", cert: cert.hex, hash: hash.hex, hashtype: hash.type, lang: options.lang, info: options.info}; 
+        console.log("sign()"); 
+        return messagePromise(msg); 
+    }; 
+    this.getVersion = function() { 
+        console.log("getVersion()"); 
+        return messagePromise({ 
+            type: "VERSION" 
+        }); 
+    }; 
+}</script></head>
+
+
+<body popover-close="" exclude-class="popover" include-class="close-popover" class="ng-isolate-scope modal-open">
+
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div cg-busy="{promise:myDownloadHuntPromise,message:message,delay:200,minDuration:300}"></div>
+
+  <!-- uiView:  --><div ui-view="" class="ng-scope"><!-- ngIf: isLoggedIn || show --></div>
+
+  <toast-message class="ng-isolate-scope"><div class="toast-message ng-binding" ng-class="{ &#39;show&#39;: toastMessageCtrl.messages.length &gt; 0 }">
+
+</div>
+</toast-message>
+
+  <script type="text/javascript" src="./index_files/js" async="" defer=""></script>
+  <script type="text/ng-template" id="simple-grid.html" src="./index_files/simple-grid.html"></script>
+  <script type="text/javascript" src="./index_files/app.js.Allalaaditud fail"></script>
+
+
+
+
+<div class="cfp-hotkeys-container fade ng-scope" ng-class="{in: helpVisible}" style="display: none;"><div class="cfp-hotkeys"><!-- ngIf: !header --><h4 class="cfp-hotkeys-title ng-binding ng-scope" ng-if="!header">Keyboard Shortcuts:</h4><!-- end ngIf: !header --><!-- ngIf: header --><table><tbody><!-- ngRepeat: hotkey in hotkeys | filter:{ description: '!$$undefined$$' } --><tr ng-repeat="hotkey in hotkeys | filter:{ description: &#39;!$$undefined$$&#39; }" class="ng-scope"><td class="cfp-hotkeys-keys"><!-- ngRepeat: key in hotkey.format() track by $index --><span ng-repeat="key in hotkey.format() track by $index" class="cfp-hotkeys-key ng-binding ng-scope">?</span><!-- end ngRepeat: key in hotkey.format() track by $index --></td><td class="cfp-hotkeys-text ng-binding">Show / hide this help menu</td></tr><!-- end ngRepeat: hotkey in hotkeys | filter:{ description: '!$$undefined$$' } --></tbody></table><!-- ngIf: footer --><div class="cfp-hotkeys-close" ng-click="toggleCheatSheet()">×</div></div></div><div class="modal-backdrop fade in" modal-animation-class="fade" ng-class="{in: animate}" ng-style="{&#39;z-index&#39;: 1040 + (index &amp;&amp; 1 || 0) + index*10}" modal-backdrop="modal-backdrop" modal-animation="true" style="z-index: 1040;"></div><div modal-render="true" tabindex="-1" role="dialog" class="modal fade ng-isolate-scope in" modal-animation-class="fade" ng-class="{in: animate}" ng-style="{&#39;z-index&#39;: 1050 + index*10, display: &#39;block&#39;}" ng-click="close($event)" modal-window="modal-window" index="0" animate="animate" modal-animation="true" style="z-index: 1050; display: block;">
+    <div class="modal-dialog" ng-class="size ? &#39;modal-&#39; + size : &#39;&#39;"><div class="modal-content" modal-transclude=""><div class="modal-header ng-scope">
+  <h4 class="modal-title ng-binding">
+    Huntloc portaali sisenemine
+    <span data-language-bar="" class="ng-isolate-scope"><!--a href="javascript:void(0)" data-ng-click="expand = !expand"><img data-ng-src="/images/flags/{{currentLang}}.png"> {{currentLang}}</a-->
+<div class="language-bar pull-right">
+  <!-- ngRepeat: lang in langs --><a href="javascript:void(0)" data-ng-click="setLang(lang)" class="language-bar__language ng-scope ng-hide" data-ng-repeat="lang in langs" data-ng-show="currentLang !== lang"><img data-ng-src="/images/flags/et.png" src="./index_files/et.png"></a><!-- end ngRepeat: lang in langs --><a href="javascript:void(0)" data-ng-click="setLang(lang)" class="language-bar__language ng-scope" data-ng-repeat="lang in langs" data-ng-show="currentLang !== lang"><img data-ng-src="/images/flags/en.png" src="./index_files/en.png"></a><!-- end ngRepeat: lang in langs --><a href="javascript:void(0)" data-ng-click="setLang(lang)" class="language-bar__language ng-scope" data-ng-repeat="lang in langs" data-ng-show="currentLang !== lang"><img data-ng-src="/images/flags/it.png" src="./index_files/it.png"></a><!-- end ngRepeat: lang in langs --><a href="javascript:void(0)" data-ng-click="setLang(lang)" class="language-bar__language ng-scope" data-ng-repeat="lang in langs" data-ng-show="currentLang !== lang"><img data-ng-src="/images/flags/lt.png" src="./index_files/lt.png"></a><!-- end ngRepeat: lang in langs --><a href="javascript:void(0)" data-ng-click="setLang(lang)" class="language-bar__language ng-scope" data-ng-repeat="lang in langs" data-ng-show="currentLang !== lang"><img data-ng-src="/images/flags/lv.png" src="./index_files/lv.png"></a><!-- end ngRepeat: lang in langs --><a href="javascript:void(0)" data-ng-click="setLang(lang)" class="language-bar__language ng-scope" data-ng-repeat="lang in langs" data-ng-show="currentLang !== lang"><img data-ng-src="/images/flags/ru.png" src="./index_files/ru.png"></a><!-- end ngRepeat: lang in langs --><a href="javascript:void(0)" data-ng-click="setLang(lang)" class="language-bar__language ng-scope" data-ng-repeat="lang in langs" data-ng-show="currentLang !== lang"><img data-ng-src="/images/flags/fi.png" src="./index_files/fi.png"></a><!-- end ngRepeat: lang in langs --><a href="javascript:void(0)" data-ng-click="setLang(lang)" class="language-bar__language ng-scope" data-ng-repeat="lang in langs" data-ng-show="currentLang !== lang"><img data-ng-src="/images/flags/de.png" src="./index_files/de.png"></a><!-- end ngRepeat: lang in langs --><a href="javascript:void(0)" data-ng-click="setLang(lang)" class="language-bar__language ng-scope" data-ng-repeat="lang in langs" data-ng-show="currentLang !== lang"><img data-ng-src="/images/flags/es.png" src="./index_files/es.png"></a><!-- end ngRepeat: lang in langs -->
+</div></span>
+  </h4>
+</div>
+<div class="modal-body ng-scope">
+  <div class="login-pin ng-binding ng-hide" ng-show="pin">
+    Sisesta allolev PIN-kood Huntloc'i mobiiliäppi (Menüü -&gt; Seaded -&gt; Portal login)<br>
+    <big><b class="ng-binding"></b></big>
+  </div>
+  <div class="login-error ng-binding ng-hide" ng-show="error">
+    <br> Error: 
+  </div>
+</div>
+<button type="button" class="btn btn-primary btn-lg ng-binding ng-scope" ng-click="startAuth()">Logi sisse</button>
+<!-- modal-footer -->
+</div></div>
+</div></body></html>
